@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciador de Itens Luxuoso</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body class="min-h-screen p-6 text-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="flex space-x-4 mb-6">
+      <button class="tab-button px-6 py-2 rounded-lg bg-white text-gray-800 font-bold shadow-md active" onclick="showTab('add', event)">Adicionar Item</button>
+      <button class="tab-button px-6 py-2 rounded-lg bg-white text-gray-800 font-bold shadow-md" onclick="showTab('view', event)">Ver Itens</button>
+    </div>
+
+    <div id="add" class="tab-content active glass p-6">
+      <h2 class="text-2xl font-bold mb-4">Adicionar Novo Item</h2>
+      <input type="text" id="link" placeholder="Link" class="w-full mb-3 p-3 rounded-lg bg-white text-gray-900" />
+      <input type="text" id="image" placeholder="URL da Imagem" class="w-full mb-3 p-3 rounded-lg bg-white text-gray-900" />
+      <textarea id="description" placeholder="Descrição" class="w-full mb-3 p-3 rounded-lg bg-white text-gray-900"></textarea>
+      <button onclick="addItem()" class="bg-purple-700 hover:bg-purple-800 text-white px-5 py-2 rounded-lg font-semibold shadow-lg">Adicionar</button>
+    </div>
+
+    <div id="view" class="tab-content hidden">
+      <h2 class="text-2xl font-bold mb-4">Itens Adicionados</h2>
+      <div id="itemList" class="space-y-4"></div>
+    </div>
+  </div>
+</body>
+</html>
